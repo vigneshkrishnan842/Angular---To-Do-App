@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="todoheading">
+      <i class="bi bi-plus-circle plus-icon" (click)="displayform()"></i>
+  <div class="col-md-1 todoList">
+    To-Do List
+  </div>
+</div>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row form-group task-form" *ngIf="displayTaskInput">
+    <input type="text" class="col-10 col-md-9 col-sm-7 inputtext" [ngClass]="{errorBorder : !taskInput.valid && taskInput.touched}" ngModel required name="taskInput" #taskInput="ngModel" placeholder="Task">
+    <button type="submit" [disabled]="!taskInput.valid" class="btn btn-primary xs-buttonMargin buttonmargin savebutton col-2 col-sm-2 col-md-1">Save</button>
+    <button type="button" [disabled]="!taskInput.valid" class="btn btn-warning xs-buttonMargin buttonmargin clearButton col-2 col-sm-2 col-md-1" (click)="onClear()">Clear</button>
+    <div *ngIf="!taskInput.valid && (taskInput.touched||taskInputInvalid)" class="errorMessage">Task Input cannot be blank!</div>
+  </div>
+</form>
+<div class="row form-group task-form" *ngIf="!isTasksArrayEmpty">
+  <button class="btn btn-primary extractButton col-sm-3 col-md-3" (click)="saveFile()">Extract to File</button>
+  <div *ngFor="let task of tasksArray; let i=index" class="arrayWrapper" [ngClass]="{highLight : tasksArray[i].taskCompleted, slideOut:tasksArray[i].taskCompleted}">
+    <input *ngIf="!tasksArray[i].taskEditMode" type="checkbox" class="taskCheckBox" (click)="checkBoxClick(i)">
+  <div *ngIf="!tasksArray[i].taskEditMode" class="col-6 col-md-9 col-sm-7 taskName" [ngClass]="{highLight : tasksArray[i].taskCompleted}">{{task.taskName}}</div>
+  <input *ngIf="tasksArray[i].taskEditMode" type="text" class="col-md-8 col-sm-8 inputtext" [(ngModel)]="taskEdit" [ngClass]="{errorBorder : !taskEdit}" placeholder="Task">
+  <button *ngIf="!tasksArray[i].taskEditMode" class="editButton btn btn-primary buttonmargin col-2 col-sm-2 col-md-1" (click)="onEdit(i)">Edit</button>
+  <button *ngIf="tasksArray[i].taskEditMode" [disabled]="!taskEdit" class="btn btn-primary buttonmargin col-2 col-sm-2 col-md-1" (click)="onSave()">Save</button>
+  <button *ngIf="tasksArray[i].taskEditMode" class="btn btn-warning cancelButton buttonmargin col-2 col-sm-2 col-md-1" (click)="onCancel()">Cancel</button>
+  <button class="btn btn-warning clearButton buttonmargin col-2 col-sm-2 col-md-1" (click)="onDelete(i)">Delete</button>
+  <div *ngIf="tasksArray[i].taskEditMode && !taskEdit" class="errorMessage">Task Input cannot be blank!</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,95 @@
+.todoList{
+    display: inline;
+}
+.plus-icon{
+    cursor: pointer;
+}
+
+/* .savebutton{
+    background-color: #394fcc;
+} */
+.clearButton{
+    color:black;
+    background-color: white;
+    border:1px solid black;
+}
+.cancelButton{
+    background-color: #a2a7ab;
+    color: white;
+    border: 1px solid #959a9e;
+}
+
+.todoheading{
+    /*background-color: #eae8ed;*/
+    background-color: #0d6efd;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    padding:20px;
+}
+
+.task-form{
+    padding: 10px;
+}
+.buttonmargin{
+    margin-left: 5px;
+}
+.inputtext{
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.extractButton{
+    margin-bottom: 20px;
+}
+.arrayWrapper{
+    border:1px solid #ced4da;
+    padding: 10px;
+}
+.taskName{
+    display: inline-block;
+    margin-left: 10px;
+}
+.highLight{
+    background-color:#eae8ed;
+    text-decoration: line-through;
+}
+.errorMessage{
+    color: red;
+}
+.errorBorder{
+    border:1px solid red;
+}
+.arrayWrapper:hover{
+    background-color: #eae8ed;
+}
+@media (max-width: 768px) {
+    .clearButton, .cancelButton{
+        font-size: small;
+        text-align: center;
+    }
+  }
+  @media (max-width: 575px) {
+    .xs-buttonMargin{
+        margin:5px;
+    }
+  }
+
+.slideOut {
+    animation-duration: 1s;
+    animation-name: slideOut;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+  }
+  
+  @keyframes slideOut {
+    from {
+        margin-left: 0%;
+        width: 100%;
+    }
+  
+    to {
+        margin-left: 100%;
+        width: 300%;
+    }
+  }
+  
