@@ -26,7 +26,6 @@ export class AppComponent{
   }
 
   onSubmit(){
-    console.log(this.taskInputForm.form.value.taskInput);
     if(this.taskInputForm.form.value.taskInput===''){
       this.taskInputInvalid=true;
     }else{

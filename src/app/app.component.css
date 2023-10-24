@@ -4,21 +4,6 @@
 .plus-icon{
     cursor: pointer;
 }
-
-/* .savebutton{
-    background-color: #394fcc;
-} */
-.clearButton{
-    color:black;
-    background-color: white;
-    border:1px solid black;
-}
-.cancelButton{
-    background-color: #a2a7ab;
-    color: white;
-    border: 1px solid #959a9e;
-}
-
 .todoheading{
     /*background-color: #eae8ed;*/
     background-color: #0d6efd;
@@ -29,14 +14,28 @@
 }
 
 .task-form{
-    padding: 10px;
-}
-.buttonmargin{
+    margin-top : 20px;
+    margin-bottom : 20px;
     margin-left: 5px;
+    margin-right: 5px;
 }
 .inputtext{
     border-radius: 5px;
     margin-left: 10px;
+}
+.clearButton{
+    color:black;
+    background-color: white;
+    border:1px solid black;
+}
+.clearButton:hover{
+    background-color: #ebebed;
+}
+.errorMessage{
+    color: red;
+}
+.errorBorder{
+    border:1px solid red;
 }
 .extractButton{
     margin-bottom: 20px;
@@ -45,27 +44,36 @@
     border:1px solid #ced4da;
     padding: 10px;
 }
-.taskName{
-    display: inline-block;
-    margin-left: 10px;
+.arrayWrapper:hover{
+    background-color: #eae8ed;
 }
 .highLight{
     background-color:#eae8ed;
     text-decoration: line-through;
 }
-.errorMessage{
-    color: red;
+.taskCheckBox{
+    cursor: pointer;
 }
-.errorBorder{
-    border:1px solid red;
+.taskName{
+    display: inline-block;
+    margin-left: 10px;
 }
-.arrayWrapper:hover{
-    background-color: #eae8ed;
+.cancelButton{
+    background-color: #a2a7ab;
+    color: white;
+    border: 1px solid #959a9e;
 }
+.cancelButton:hover{
+    background-color: #777f80;
+}
+
+.buttonmargin{
+    margin-left: 5px;
+}
+
 @media (max-width: 768px) {
-    .clearButton, .cancelButton{
-        font-size: small;
-        text-align: center;
+    .inputtext2{
+        margin-bottom: 2%;
     }
   }
   @media (max-width: 575px) {
@@ -73,6 +81,29 @@
         margin:5px;
     }
   }
+  @media (max-width: 991px) {
+    .clearButton{
+        padding:1%;
+    }
+    .editButton{
+        padding: 1%;
+    }
+    .cancelButton{
+        padding: 1%;
+    }
+    .saveButton{
+        padding: 1%;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .clearButton{
+        padding:0%;
+    }
+    .editButton{
+        padding: 0%;
+    }
+}
 
 .slideOut {
     animation-duration: 1s;
